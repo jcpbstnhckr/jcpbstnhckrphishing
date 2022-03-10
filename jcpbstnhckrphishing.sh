@@ -142,21 +142,25 @@ banner() {
 		${CYAN}		J   CCC  PPPP   BBBB    SSS   TTTTTT  N   N   H  H   CCC  K  K  RRRR   PPPP   H  H  III   SSS   H  H  III  N   N   GGG 
 		${CYAN}		J  C     P   P  B   B  S        TT    NN  N   H  H  C     K K   R   R  P   P  H  H   I   S      H  H   I   NN  N  G    
 		${BLUE}		J  C     PPPP   BBBB    SSS     TT    N N N   HHHH  C     KK    RRRR   PPPP   HHHH   I    SSS   HHHH   I   N N N  G  GG
-		${BLUE}	J   J  C     P      B   B      S    TT    N  NN   H  H  C     K K   R R    P      H  H   I       S  H  H   I   N  NN  G   G
-		${BLUE}	 JJJ    CCC  P      BBBB   SSSS     TT    N   N   H  H   CCC  K  K  R  RR  P      H  H  III  SSSS   H  H  III  N   N   GGG 
+		${BLUE}	J   J  C     P      B   B      S    TT    N  NN   H  H  C     K K   R R    P      H  H   I       S  H  H   I   N  NN  G   G    
+		${BLUE}	 JJJ    CCC  P      BBBB   SSSS     TT    N   N   H  H   CCC  K  K  R  RR  P      H  H  III  SSSS   H  H  III  N   N   GGG     
 
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} jcpbstnhckrphishing tool created by JCPBSTNHCKR | 2022 Version 1.0 ${WHITE}
+		${YELLOW} JCPBSTNHCKR Phishing 2022 Version 1.0                                                 ${RED} FOR EDUCATIONAL PURPOSES ONLY!!!
+		${WHITE} JCPBSTNHCKR | https://github.com/jcpbstnhckr                     ${RED} SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan
 	EOF
 }
 
 ## Small Banner
 banner_small() {
 	cat <<- EOF
-		${CYAN}	   dMMMMMP .aMMMb  dMMMMb  dMMMMb  .dMMMb dMMMMMMP dMMMMb  dMP dMP .aMMMb  dMP dMP dMMMMb  dMMMMb  dMP dMP dMP .dMMMb  dMP dMP dMP dMMMMb  .aMMMMP
-		${CYAN}		  dMP dMP"VMP dMP.dMP dMP"dMP dMP" VP   dMP   dMP dMP dMP dMP dMP"VMP dMP.dMP dMP.dMP dMP.dMP dMP dMP amr dMP" VP dMP dMP amr dMP dMP dMP"    
-		${BLUE}		 dMP dMP     dMMMMP" dMMMMK"  VMMMb    dMP   dMP dMP dMMMMMP dMP     dMMMMK" dMMMMK" dMMMMP" dMMMMMP dMP  VMMMb  dMMMMMP dMP dMP dMP dMP MMP" 
+		${CYAN}    dMMMMMP .aMMMb  dMMMMb  dMMMMb  .dMMMb dMMMMMMP dMMMMb  dMP dMP .aMMMb  dMP dMP dMMMMb  dMMMMb  dMP dMP dMP .dMMMb  dMP dMP dMP dMMMMb  .aMMMMP
+		${CYAN}       dMP dMP"VMP dMP.dMP dMP"dMP dMP" VP   dMP   dMP dMP dMP dMP dMP"VMP dMP.dMP dMP.dMP dMP.dMP dMP dMP amr dMP" VP dMP dMP amr dMP dMP dMP"    
+		${BLUE}      dMP dMP     dMMMMP" dMMMMK"  VMMMb    dMP   dMP dMP dMMMMMP dMP     dMMMMK" dMMMMK" dMMMMP" dMMMMMP dMP  VMMMb  dMMMMMP dMP dMP dMP dMP MMP" 
 		${BLUE}	dK .dMP dMP.aMP dMP     dMP.aMF dP .dMP   dMP   dMP dMP dMP dMP dMP.aMP dMP"AMF dMP"AMF dMP     dMP dMP dMP dP .dMP dMP dMP dMP dMP dMP dMP.dMP   
 		${BLUE}	VMMMP"  VMMMP" dMP     dMMMMP"  VMMMP"   dMP   dMP dMP dMP dMP  VMMMP" dMP dMP dMP dMP dMP     dMP dMP dMP  VMMMP" dMP dMP dMP dMP dMP  VMMMP"    
+	
+		${YELLOW} JCPBSTNHCKR Phishing 2022 Version 1.0                                                                    ${RED} FOR EDUCATIONAL PURPOSES ONLY!!!
+		${WHITE} JCPBSTNHCKR | https://github.com/jcpbstnhckr                                        ${RED} SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan
 	EOF
 }
 
