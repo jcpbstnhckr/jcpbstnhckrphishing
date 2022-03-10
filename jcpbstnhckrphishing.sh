@@ -159,8 +159,8 @@ banner_small() {
 	        ${BLUE} dK .dMP dMP.aMP dMP     dMP.aMF dP .dMP   dMP   dMP dMP dMP dMP dMP.aMP dMP"AMF dMP"AMF dMP     dMP dMP dMP dP .dMP dMP dMP dMP dMP dMP dMP.dMP   
 	        ${BLUE} VMMMP"  VMMMP" dMP     dMMMMP"  VMMMP"   dMP   dMP dMP dMP dMP  VMMMP" dMP dMP dMP dMP dMP     dMP dMP dMP  VMMMP" dMP dMP dMP dMP dMP  VMMMP"    
 	
-		${YELLOW} JCPBSTNHCKR Phishing 2022 Version 1.0                                                                    ${RED} FOR EDUCATIONAL PURPOSES ONLY!!!
-		${WHITE} JCPBSTNHCKR | https://github.com/jcpbstnhckr                                        ${RED} SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan
+		${YELLOW} JCPBSTNHCKR Phishing 2022 Version 1.0                                                                       ${RED} FOR EDUCATIONAL PURPOSES ONLY!!!
+		${WHITE} JCPBSTNHCKR | https://github.com/jcpbstnhckr                                               ${RED} SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan
 	EOF
 }
 
