@@ -1,83 +1,14 @@
 #!/bin/bash
 
-##   jcpbstnhckrphishing 	: 	Automated Phishing Tool
-##   Author 	: 	JCPBSTNHCKR
-##   Version 	: 	1.0
-##   Github 	: 	https://github.com/jcpbstnhckr
+## JCPBSTNHCKRPHISHING  : Phishing Tools (Hacking)
+## Author               : JCPBSTNHCKR (Jherome Carl Mañalac Pabustan)
+## Version              : 1.0
+## Release              : March 11, 2022
+## Github               : https://github.com/jcpbstnhckr
+## Facebook             : https://facebook.com/jcpbstnhckr
+## Youtube              : https://www.youtube.com/c/JheromeCarlMañalacPabustan
 
-
-##                   GNU GENERAL PUBLIC LICENSE
-##                    Version 3, 29 June 2007
-##
-##    Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
-##    Everyone is permitted to copy and distribute verbatim copies
-##    of this license document, but changing it is not allowed.
-##
-##                         Preamble
-##
-##    The GNU General Public License is a free, copyleft license for
-##    software and other kinds of works.
-##
-##    The licenses for most software and other practical works are designed
-##    to take away your freedom to share and change the works.  By contrast,
-##    the GNU General Public License is intended to guarantee your freedom to
-##    share and change all versions of a program--to make sure it remains free
-##    software for all its users.  We, the Free Software Foundation, use the
-##    GNU General Public License for most of our software; it applies also to
-##    any other work released this way by its authors.  You can apply it to
-##    your programs, too.
-##
-##    When we speak of free software, we are referring to freedom, not
-##    price.  Our General Public Licenses are designed to make sure that you
-##    have the freedom to distribute copies of free software (and charge for
-##    them if you wish), that you receive source code or can get it if you
-##    want it, that you can change the software or use pieces of it in new
-##    free programs, and that you know you can do these things.
-##
-##    To protect your rights, we need to prevent others from denying you
-##    these rights or asking you to surrender the rights.  Therefore, you have
-##    certain responsibilities if you distribute copies of the software, or if
-##    you modify it: responsibilities to respect the freedom of others.
-##
-##    For example, if you distribute copies of such a program, whether
-##    gratis or for a fee, you must pass on to the recipients the same
-##    freedoms that you received.  You must make sure that they, too, receive
-##    or can get the source code.  And you must show them these terms so they
-##    know their rights.
-##
-##    Developers that use the GNU GPL protect your rights with two steps:
-##    (1) assert copyright on the software, and (2) offer you this License
-##    giving you legal permission to copy, distribute and/or modify it.
-##
-##    For the developers' and authors' protection, the GPL clearly explains
-##    that there is no warranty for this free software.  For both users' and
-##    authors' sake, the GPL requires that modified versions be marked as
-##    changed, so that their problems will not be attributed erroneously to
-##    authors of previous versions.
-##
-##    Some devices are designed to deny users access to install or run
-##    modified versions of the software inside them, although the manufacturer
-##    can do so.  This is fundamentally incompatible with the aim of
-##    protecting users' freedom to change the software.  The systematic
-##    pattern of such abuse occurs in the area of products for individuals to
-##    use, which is precisely where it is most unacceptable.  Therefore, we
-##    have designed this version of the GPL to prohibit the practice for those
-##    products.  If such problems arise substantially in other domains, we
-##    stand ready to extend this provision to those domains in future versions
-##    of the GPL, as needed to protect the freedom of users.
-##
-##    Finally, every program is threatened constantly by software patents.
-##    States should not allow patents to restrict development and use of
-##    software on general-purpose computers, but in those that do, we wish to
-##    avoid the special danger that patents applied to a free program could
-##    make it effectively proprietary.  To prevent this, the GPL assures that
-##    patents cannot be used to render the program non-free.
-##
-##    The precise terms and conditions for copying, distribution and
-##    modification follow.
-##
-##      Copyright (C) 2022  JCPBSTNHCKR (https://github.com/jcpbstnhckr
-##
+## DO NOT COPY PASTE!!!
 
 
 ## ANSI colors (FG & BG)
@@ -87,28 +18,30 @@ REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf
 MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
 RESETBG="$(printf '\e[0m\n')"
 
-## Directories
+
+## DIRECTORIES
 if [[ ! -d ".server" ]]; then
-	mkdir -p ".server"
+        mkdir -p ".server"
 fi
 if [[ -d ".server/www" ]]; then
-	rm -rf ".server/www"
-	mkdir -p ".server/www"
+        rm -rf ".server/www"
+        mkdir -p ".server/www"
 else
-	mkdir -p ".server/www"
+        mkdir -p ".server/www"
 fi
 if [[ -e ".cld.log" ]]; then
-	rm -rf ".cld.log"
+        rm -rf ".cld.log"
 fi
 
-## Script termination
+
+## SCRIPT TERMINATION
 exit_on_signal_SIGINT() {
-    { printf "\n\n%s\n\n" "${RED}[${WHITE}!${RED}]${RED} Program Interrupted." 2>&1; reset_color; }
+    { printf "\n\n%s\n\n" "\e[1;31m[\e[0m\e[1;37m!\e[0m\e[1;31m]\e[0m\e[1;31m Program Interrupted. \e[0m\n" 2>&1; }
     exit 0
 }
 
 exit_on_signal_SIGTERM() {
-    { printf "\n\n%s\n\n" "${RED}[${WHITE}!${RED}]${RED} Program Terminated." 2>&1; reset_color; }
+    { printf "\n\n%s\n\n" "\e[1;31m[\e[0m\e[1;37m!\e[0m\e[1;31m]\e[0m\e[1;31m Program Terminated. \e[0m\n" 2>&1; }
     exit 0
 }
 
@@ -122,87 +55,81 @@ reset_color() {
     return
 }
 
-## Kill already running process
+## KILL ALREADY RUNNING PROCESS
 kill_pid() {
-	if [[ `pidof php` ]]; then
-		killall php > /dev/null 2>&1
-	fi
-	if [[ `pidof ngrok` ]]; then
-		killall ngrok > /dev/null 2>&1
-	fi
-	if [[ `pidof cloudflared` ]]; then
-		killall cloudflared > /dev/null 2>&1
-	fi
+        if [[ `pidof php` ]]; then
+                killall php > /dev/null 2>&1
+        fi
+        if [[ `pidof ngrok` ]]; then
+                killall ngrok > /dev/null 2>&1
+        fi
+        if [[ `pidof cloudflared` ]]; then
+                killall cloudflared > /dev/null 2>&1
+        fi
 }
+
 
 ## Banner
 banner() {
-	cat <<- EOF
-              
-		${CYAN}		J   CCC  PPPP   BBBB    SSS   TTTTTT  N   N   H  H   CCC  K  K  RRRR   PPPP   H  H  III   SSS   H  H  III  N   N   GGG 
-		${CYAN}		J  C     P   P  B   B  S        TT    NN  N   H  H  C     K K   R   R  P   P  H  H   I   S      H  H   I   NN  N  G    
-		${BLUE}		J  C     PPPP   BBBB    SSS     TT    N N N   HHHH  C     KK    RRRR   PPPP   HHHH   I    SSS   HHHH   I   N N N  G  GG
-		${BLUE}     J   J  C     P      B   B      S    TT    N  NN   H  H  C     K K   R R    P      H  H   I       S  H  H   I   N  NN  G   G    
-		${BLUE}      JJJ    CCC  P      BBBB   SSSS     TT    N   N   H  H   CCC  K  K  R  RR  P      H  H  III  SSSS   H  H  III  N   N   GGG     
-
-		${YELLOW} JCPBSTNHCKR Phishing 2022 Version 1.0                                                 ${RED} FOR EDUCATIONAL PURPOSES ONLY!!!
-		${WHITE} JCPBSTNHCKR | https://github.com/jcpbstnhckr                     ${RED} SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan
-	EOF
+clear
+printf '\e[1;32m                 dMMMMMP  .aMMMb   dMMMMb   dMMMMb   .dMMMb  dMMMMMMP  dMMMMb   dMP dMP  .aMMMb   dMP dMP  dMMMMb  \e[0m\n'
+printf '\e[1;32m                    dMP  dMP"VMP  dMP.dMP  dMP"dMP  dMP" VP    dMP    dMP dMP  dMP dMP  dMP"VMP  dMP.dMP  dMP.dMP  \e[0m\n'
+printf '\e[1;36m                   dMP  dMP      dMMMMP"  dMMMMK"   VMMMb     dMP    dMP dMP  dMMMMMP  dMP      dMMMMK"  dMMMMK"   \e[0m\n'
+printf '\e[1;36m              dK .dMP  dMP.aMP  dMP      dMP.aMF  dP .dMP    dMP    dMP dMP  dMP dMP  dMP.aMP  dMP"AMF  dMP"AMF    \e[0m\n'
+printf '\e[1;36m              VMMMP"   VMMMP"  dMP      dMMMMP"   VMMMP"    dMP    dMP dMP  dMP dMP   VMMMP"  dMP dMP  dMP dMP     \e[0m\n'
+printf '\e[1;36m                                                                                                                   \e[0m\n'
+printf '\e[1;36m                              dMMMMb   dMP dMP  dMP  .dMMMb   dMP dMP  dMP  dMMMMb   .aMMMMP                       \e[0m\n'
+printf '\e[1;34m                             dMP.dMP  dMP dMP  amr  dMP" VP  dMP dMP  amr  dMP dMP  dMP"                           \e[0m\n'
+printf '\e[1;34m                            dMMMMP"  dMMMMMP  dMP   VMMMb   dMMMMMP  dMP  dMP dMP  dMP MMP"                        \e[0m\n'
+printf '\e[1;34m                           dMP      dMP dMP  dMP  dP .dMP  dMP dMP  dMP  dMP dMP  dMP.dMP                          \e[0m\n'
+printf '\e[1;34m                          dMP      dMP dMP  dMP   VMMMP"  dMP dMP  dMP  dMP dMP   VMMMP"                           \e[0m\n'
+printf '\e[1;36m                                                                                                                   \e[0m\n'
+printf " \e[1;93m JCPBSTNHCKR Phishing 2022 Version 1.0                                         \e[0m\e[1;31m FOR EDUCATIONAL PURPOSES ONLY!!!\e[0m\n"
+printf " \e[1;77m JCPBSTNHCKR | https://github.com/jcpbstnhckr            \e[0m\e[1;31m SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan\e[0m\n"
+printf "\n"
 }
 
-## Small Banner
-banner_small() {
-	cat <<- EOF
-		${CYAN}    dMMMMMP .aMMMb  dMMMMb  dMMMMb  .dMMMb dMMMMMMP dMMMMb  dMP dMP .aMMMb  dMP dMP dMMMMb  dMMMMb  dMP dMP dMP .dMMMb  dMP dMP dMP dMMMMb  .aMMMMP
-		${CYAN}       dMP dMP"VMP dMP.dMP dMP"dMP dMP" VP   dMP   dMP dMP dMP dMP dMP"VMP dMP.dMP dMP.dMP dMP.dMP dMP dMP amr dMP" VP dMP dMP amr dMP dMP dMP"    
-		${BLUE}      dMP dMP     dMMMMP" dMMMMK"  VMMMb    dMP   dMP dMP dMMMMMP dMP     dMMMMK" dMMMMK" dMMMMP" dMMMMMP dMP  VMMMb  dMMMMMP dMP dMP dMP dMP MMP" 
-	        ${BLUE} dK .dMP dMP.aMP dMP     dMP.aMF dP .dMP   dMP   dMP dMP dMP dMP dMP.aMP dMP"AMF dMP"AMF dMP     dMP dMP dMP dP .dMP dMP dMP dMP dMP dMP dMP.dMP   
-	        ${BLUE} VMMMP"  VMMMP" dMP     dMMMMP"  VMMMP"   dMP   dMP dMP dMP dMP  VMMMP" dMP dMP dMP dMP dMP     dMP dMP dMP  VMMMP" dMP dMP dMP dMP dMP  VMMMP"    
-	
-		${YELLOW} JCPBSTNHCKR Phishing 2022 Version 1.0                                                                       ${RED} FOR EDUCATIONAL PURPOSES ONLY!!!
-		${WHITE} JCPBSTNHCKR | https://github.com/jcpbstnhckr                                               ${RED} SUBSCRIBE ME ON YOUTUBE: Jherome Carl Manalac Pabustan
-	EOF
-}
 
-## Dependencies
+## DEPENDENCIES
 dependencies() {
-	echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing required packages..."
+        echo -e "\e[1;34m[\e[1;37m+\e[1;34m]\e[1;36m Installing required packages... \e[0m\n"
 
     if [[ -d "/data/data/com.termux/files/home" ]]; then
         if [[ `command -v proot` ]]; then
             printf ''
         else
-			echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing package : ${ORANGE}proot${CYAN}"${WHITE}
+                        echo -e "\e[1;34m[\e[1;37m+\e[1;34m]\e[1;36m Installing package : \e[1;33m proot \e[0m\n"
             pkg install proot resolv-conf -y
         fi
     fi
 
-	if [[ `command -v php` && `command -v wget` && `command -v curl` && `command -v unzip` ]]; then
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Packages already installed."
-	else
-		pkgs=(php curl wget unzip)
-		for pkg in "${pkgs[@]}"; do
-			type -p "$pkg" &>/dev/null || {
-				echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing package : ${ORANGE}$pkg${CYAN}"${WHITE}
-				if [[ `command -v pkg` ]]; then
-					pkg install "$pkg" -y
-				elif [[ `command -v apt` ]]; then
-					apt install "$pkg" -y
-				elif [[ `command -v apt-get` ]]; then
-					apt-get install "$pkg" -y
-				elif [[ `command -v pacman` ]]; then
-					sudo pacman -S "$pkg" --noconfirm
-				elif [[ `command -v dnf` ]]; then
-					sudo dnf -y install "$pkg"
-				else
-					echo -e "\n${RED}[${WHITE}!${RED}]${RED} Unsupported package manager, Install packages manually."
-					{ reset_color; exit 1; }
-				fi
-			}
-		done
-	fi
+        if [[ `command -v php` && `command -v wget` && `command -v curl` && `command -v unzip` ]]; then
+                echo -e "\e[1;34m[\e[1;37m+\e[1;34m]\e[1;36m  Packages already installed. \e[0m\n"
+        else
+                pkgs=(php curl wget unzip)
+                for pkg in "${pkgs[@]}"; do
+                        type -p "$pkg" &>/dev/null || {
+                                echo -e "\e[1;34m[\e[1;37m+\e[1;34m]\e[1;36m  Installing package : \e[1;33m $pkg \e[0m\n"
+                                if [[ `command -v pkg` ]]; then
+                                        pkg install "$pkg" -y
+                                elif [[ `command -v apt` ]]; then
+                                        apt install "$pkg" -y
+                                elif [[ `command -v apt-get` ]]; then
+                                        apt-get install "$pkg" -y
+                                elif [[ `command -v pacman` ]]; then
+                                        sudo pacman -S "$pkg" --noconfirm
+                                elif [[ `command -v dnf` ]]; then
+                                        sudo dnf -y install "$pkg"
+                                else
+                                        echo -e "\n${RED}[${WHITE}!${RED}]${RED} Unsupported package manager, Install packages manually."
+                                        { reset_color; exit 1; }
+                                fi
+                        }
+                done
+        fi
 
 }
+
 
 ## Download Ngrok
 download_ngrok() {
